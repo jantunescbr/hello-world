@@ -1,0 +1,132 @@
+Palestra - Inbound (Martechtalks)
+
+
+<!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
+<form action='https://forms.zohopublic.eu/liminal/form/PalestraInboundMartechtalks/formperma/hV2ZTV8LjldQxR2VKp2gdQbRvRwHdI11-HpHMOq6hSI/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data' onSubmit="zf_validateandsubmitdata();">
+<input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+<input type="hidden" name="zf_redirect_url" value=""><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+<input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+<h2>Palestra - Inbound (Martechtalks)</h2>
+<p></p>
+<!--Name-->
+<label>Nome
+<em>*</em>
+</label>
+<input type="text" maxlength="255" name="Name_First" fieldType=7 /><label>Próprio</label>
+<input type="text" maxlength="255" name="Name_Last" fieldType=7 /><label>Apelido</label>
+<!--Email-->
+<label>Email 
+<em>*</em>
+</label>
+<input type="text" maxlength="255" name="Email" value="" fieldType=9 />
+<!--Single Line-->
+<label>Empresa 
+<em>*</em>
+</label>
+<input  type="text" name="SingleLine1" value="" fieldType=1 maxlength="255" />
+<!--Dropdown-->
+<label>Função
+</label>
+<select name="Dropdown"><option selected="true" value="-Select-">-Select-</option>
+<option value="Administra&ccedil;&atilde;o&#x2f;S&oacute;cio">Administra&ccedil;&atilde;o&#x2f;S&oacute;cio</option>
+<option value="Diretor&#x20;Geral">Diretor Geral</option>
+<option value="Diretor&#x20;de&#x20;Marketing">Diretor de Marketing</option>
+<option value="Diretor&#x20;de&#x20;Vendas">Diretor de Vendas</option>
+<option value="Diretor&#x20;de&#x20;IT">Diretor de IT</option>
+<option value="Recursos&#x20;Humanos">Recursos Humanos</option>
+<option value="Marketing">Marketing</option>
+<option value="Comercial">Comercial</option>
+<option value="Compras">Compras</option>
+<option value="Opera&ccedil;&otilde;es">Opera&ccedil;&otilde;es</option>
+<option value="Qualidade">Qualidade</option>
+<option value="Produ&ccedil;&atilde;o">Produ&ccedil;&atilde;o</option>
+<option value="Financeiro&#x2f;Administrativo&#x2f;Legal">Financeiro&#x2f;Administrativo&#x2f;Legal</option>
+<option value="ROC">ROC</option>
+<option value="TOC">TOC</option>
+<option value="IDI&#x20;&#x28;Investiga&ccedil;&atilde;o,&#x20;Desenvolvimento&#x20;e&#x20;Inova&ccedil;&atilde;o&#x29;">IDI &#x28;Investiga&ccedil;&atilde;o, Desenvolvimento e Inova&ccedil;&atilde;o&#x29;</option>
+<option value="TI&#x20;-&#x20;Sistemas">TI - Sistemas</option>
+<option value="TI&#x20;-&#x20;Project&#x20;Manager">TI - Project Manager</option>
+<option value="TI&#x20;-&#x20;Developer">TI - Developer</option>
+<option value="TI&#x20;-&#x20;Geral">TI - Geral</option>
+<option value="Consultor">Consultor</option>
+<option value="Outro">Outro</option>
+</select>
+<!--Decision Box-->
+<input type="checkbox" id="DecisionBox" name="DecisionBox"/>
+<label for="DecisionBox">Subscrever a Newsletter
+</label>
+<!--Single Line-->
+<label>Source 
+</label>
+<input  type="text" name="SingleLine" value="" fieldType=1 maxlength="255" />
+<!--Single Line-->
+<label>Medium 
+</label>
+<input  type="text" name="SingleLine3" value="" fieldType=1 maxlength="255" />
+<!--Single Line-->
+<label>Details 
+</label>
+<input  type="text" name="SingleLine4" value="" fieldType=1 maxlength="255" />
+<button type="submit"><em>Submit</em></button></form>               
+<script type="text/javascript">var salesIQFieldsArray = [{"formFieldName":"Email","formFieldType":9,"salesIQFieldName":"Email"}];
+function zf_validateandsubmitdata(){
+var visitorinfo = {};
+var elements = document.getElementById("form").elements;
+for (var elmIdx = 0; elmIdx<elements.length;elmIdx++) {
+var inpElem = elements[elmIdx];
+var fieldLinkName = inpElem.getAttribute("name");
+var fieldType = inpElem.getAttribute("fieldType");
+if(fieldType==="1" || fieldType==="7" || fieldType==="9" || fieldType==="11"){
+for(var idx = 0; idx < salesIQFieldsArray.length; idx++) {
+var salesIQObj = salesIQFieldsArray[idx];
+var zfFieldName = salesIQObj.formFieldName;
+var salesIQFieldName = salesIQObj.salesIQFieldName;
+if(fieldType === "1"){
+if(fieldLinkName===zfFieldName){
+var salesIQValue = inpElem.value;
+if(salesIQFieldName==="Phone"){
+visitorinfo.contactnumber = salesIQValue;
+}
+if(salesIQFieldName==="Name"){
+visitorinfo.name = salesIQValue;
+}
+}
+}
+if(fieldType==="7"){
+var zfFldCompLinkName = salesIQObj.fieldCompLinkName;
+if(fieldLinkName===zfFldCompLinkName){
+var salesIQValue=inpElem.value;
+visitorinfo.name = salesIQValue;
+}
+}
+if(fieldType==="9"){
+if(fieldLinkName===zfFieldName){
+var salesIQValue=inpElem.value;
+visitorinfo.email = salesIQValue;
+}
+}
+if(fieldType==="11"){
+fieldLinkName = inpElem.getAttribute("compname");
+if(fieldLinkName===zfFieldName){
+var phoneFormat = inpElem.getAttribute("phoneFormat");
+var salesIQValue="";
+if(phoneFormat==="1"){
+salesIQValue = document.getElementById("international_"+fieldLinkName+"_countrycode").value; 
+var isCodeEnabled = inpElem.getAttribute("isCountryCodeEnabled");
+if(isCodeEnabled && salesIQValue != null && salesIQValue !=""){
+salesIQValue = document.getElementById("international_"+fieldLinkName+"_countrycodeval").value+salesIQValue;
+}
+}else if(phoneFormat==="2"){
+var countryCode = document.getElementById(fieldLinkName+"_countrycode").value;
+var first = document.getElementById(fieldLinkName+"_first").value;
+var last = document.getElementById(fieldLinkName+"_second").value;
+salesIQValue =countryCode+first+last;
+}
+visitorinfo.contactnumber = salesIQValue;
+}
+}
+}
+}
+}
+parent.postMessage(JSON.stringify({ type: 'zoho.salesiq.apimessage', visitor: visitorinfo } ), '*');// No I18N
+}</script>
